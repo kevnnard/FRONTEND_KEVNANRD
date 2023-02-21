@@ -10,6 +10,9 @@ import noGuard from "@/layout/noGuard";
 import Head from "next/head";
 import "../theme/general.css";
 import Snackbar from "@/components/ui-components/snackbar";
+import { NavigationScroll } from "@/layout/NavigationScroll";
+
+const Noop = ({ children }: JSX.Element = () => {}) => <> {children} </>;
 
 const _app = ({ Component, pageProps }: any) => {
   let Layout;
@@ -21,24 +24,26 @@ const _app = ({ Component, pageProps }: any) => {
       Layout = noGuard;
       break;
     default:
-      Layout = noGuard;
+      Layout = Noop;
   }
   return (
     <>
       <Head>
-        <title>Kevnanrd</title>
-        <link rel="icon" href="/assets/images/marca/logoB.svg" />
+        <title>Kevnnard Studio</title>
+        <link rel="icon" href="/images/icono-light.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Provider store={store}>
         <PersistGate loading={false} persistor={persister}>
           <ApolloProvider client={ClientConfig}>
-            <JWTProvider>
-              <Layout>
-                <Component {...pageProps} />
-                <Snackbar />
-              </Layout>
-            </JWTProvider>
+            <NavigationScroll>
+              <JWTProvider>
+                <Layout>
+                  <Component {...pageProps} />
+                  <Snackbar />
+                </Layout>
+              </JWTProvider>
+            </NavigationScroll>
           </ApolloProvider>
         </PersistGate>
       </Provider>

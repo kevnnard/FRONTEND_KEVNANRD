@@ -159,6 +159,4 @@ const Login = () => {
     </ThemeProvider>
   );
 };
-
-Login.Layout = "noGuard";
 export default Login;
