@@ -18,11 +18,9 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { useTheme, createTheme, ThemeProvider } from "@mui/material/styles";
 import Link from "next/link";
 import Head from "next/head";
-
-const theme = createTheme();
 
 interface Props {
   id?: string;
@@ -34,6 +32,7 @@ interface Props {
 }
 
 const Works = () => {
+  const theme = useTheme();
   const [worksState, setWorks] = useState<Props[]>();
   const { works } = useSelector((state: any) => state.works);
 
@@ -57,58 +56,55 @@ const Works = () => {
       <Head>
         <title>Works</title>
       </Head>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <AppBar position="relative">
-          <Toolbar>
-            <CameraIcon sx={{ mr: 2 }} />
-            <Typography variant="h6" color="inherit" noWrap>
-              My works
-            </Typography>
-            {/* <Button onClick={onHandleClick}>Click</Button> */}
-          </Toolbar>
-        </AppBar>
-        <main>
-          <Container sx={{ py: 2 }}>
-            {/* End hero unit */}
-            <Grid container spacing={4}>
-              {worksState
-                ? worksState.getAllWorks!.map((card: Props, index: number) => (
-                    <Grid item key={index} xs={12} sm={6} md={4}>
-                      <Card
-                        sx={{
-                          height: "100%",
-                          display: "flex",
-                          flexDirection: "column",
-                        }}
-                      >
-                        <CardMedia
-                          component="img"
-                          image={`/images/works/${card.images[0].nameImage}.png`}
-                          alt="random"
-                        />
-                        <CardContent sx={{ flexGrow: 1 }}>
-                          <Typography gutterBottom variant="h5" component="h2">
-                            {card.name} - in {card.year}
-                          </Typography>
-                          <Typography>{card.minDescription}</Typography>
-                        </CardContent>
-                        <CardActions>
-                          <Button size="small">View</Button>
-                          <Button size="small">
-                            <Link type="button" href={`/auth/works/${card.id}`}>
-                              Edit
-                            </Link>
-                          </Button>
-                        </CardActions>
-                      </Card>
-                    </Grid>
-                  ))
-                : null}
-            </Grid>
-          </Container>
-        </main>
-      </ThemeProvider>
+      <AppBar position="relative">
+        <Toolbar>
+          <CameraIcon sx={{ mr: 2 }} />
+          <Typography variant="h6" color="inherit" noWrap>
+            My works
+          </Typography>
+          {/* <Button onClick={onHandleClick}>Click</Button> */}
+        </Toolbar>
+      </AppBar>
+      <main>
+        <Container sx={{ py: 2 }}>
+          {/* End hero unit */}
+          <Grid container spacing={4}>
+            {worksState
+              ? worksState.getAllWorks!.map((card: Props, index: number) => (
+                  <Grid item key={index} xs={12} sm={6} md={4}>
+                    <Card
+                      sx={{
+                        height: "100%",
+                        display: "flex",
+                        flexDirection: "column",
+                      }}
+                    >
+                      <CardMedia
+                        component="img"
+                        image={`/images/works/${card.images[0].nameImage}.png`}
+                        alt="random"
+                      />
+                      <CardContent sx={{ flexGrow: 1 }}>
+                        <Typography gutterBottom variant="h5" component="h2">
+                          {card.name} - in {card.year}
+                        </Typography>
+                        <Typography>{card.minDescription}</Typography>
+                      </CardContent>
+                      <CardActions>
+                        <Button size="small">View</Button>
+                        <Button size="small">
+                          <Link type="button" href={`/auth/works/${card.id}`}>
+                            Edit
+                          </Link>
+                        </Button>
+                      </CardActions>
+                    </Card>
+                  </Grid>
+                ))
+              : null}
+          </Grid>
+        </Container>
+      </main>
     </>
   );
 };

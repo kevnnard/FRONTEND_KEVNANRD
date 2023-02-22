@@ -1,6 +1,4 @@
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
-import { createContext, useState, useMemo } from "react";
+import { createContext, useMemo, useState } from "react";
 
 export const ColorModeContext = createContext({
   toggleColorMode: () => {},
@@ -15,16 +13,6 @@ export const ConfigContext = ({ children }: any) => {
       },
     }),
     []
-  );
-
-  const theme = useMemo(
-    () =>
-      createTheme({
-        palette: {
-          mode,
-        },
-      }),
-    [mode]
   );
   return (
     <ColorModeContext.Provider value={colorMode}>

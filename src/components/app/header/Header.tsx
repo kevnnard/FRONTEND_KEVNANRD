@@ -1,7 +1,12 @@
+import CustomizedSwitches from "@/components/ui-components/SwicthTheme";
 import React from "react";
 
 const Header = () => {
-  return <div>Header</div>;
+  return (
+    <>
+      <CustomizedSwitches />
+    </>
+  );
 };
 
 export default Header;

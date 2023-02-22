@@ -2,7 +2,6 @@ import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { store, persister } from "@/store";
 import { AuthProvider as JWTProvider } from "@/contexts/authContext";
-import PropTypes from "prop-types";
 import { ApolloProvider } from "@apollo/client/react";
 import ClientConfig from "@/contexts/client.config";
 import authGuard from "@/layout/authGuard";
@@ -11,8 +10,9 @@ import Head from "next/head";
 import "../theme/general.css";
 import Snackbar from "@/components/ui-components/snackbar";
 import { NavigationScroll } from "@/layout/NavigationScroll";
+import { ConfigContext } from "@/contexts/configContext";
 
-const Noop = ({ children }: JSX.Element = () => {}) => <> {children} </>;
+const Noop = ({ children }: any) => <> {children} </>;
 
 const _app = ({ Component, pageProps }: any) => {
   let Layout;
@@ -36,14 +36,16 @@ const _app = ({ Component, pageProps }: any) => {
       <Provider store={store}>
         <PersistGate loading={false} persistor={persister}>
           <ApolloProvider client={ClientConfig}>
-            <NavigationScroll>
-              <JWTProvider>
-                <Layout>
-                  <Component {...pageProps} />
-                  <Snackbar />
-                </Layout>
-              </JWTProvider>
-            </NavigationScroll>
+            <ConfigContext>
+              <NavigationScroll>
+                <JWTProvider>
+                  <Layout>
+                    <Component {...pageProps} />
+                    <Snackbar />
+                  </Layout>
+                </JWTProvider>
+              </NavigationScroll>
+            </ConfigContext>
           </ApolloProvider>
         </PersistGate>
       </Provider>

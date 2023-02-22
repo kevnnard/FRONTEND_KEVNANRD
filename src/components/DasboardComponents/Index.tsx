@@ -1,5 +1,5 @@
 import * as React from "react";
-import { styled, createTheme, ThemeProvider } from "@mui/material/styles";
+import { styled, ThemeProvider, useTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import MuiDrawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
@@ -17,8 +17,9 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import {
   mainListItems,
-  secondaryListItems,
+  // secondaryListItems,
 } from "@/components/DasboardComponents/ListItems";
+import CustomizedSwitches from "../ui-components/SwicthTheme";
 
 function Copyright(props: any) {
   return (
@@ -88,16 +89,15 @@ const Drawer = styled(MuiDrawer, {
   },
 }));
 
-const mdTheme = createTheme();
-
 const DashboardContentIndex = ({ children }: any) => {
+  const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   const toggleDrawer = () => {
     setOpen(!open);
   };
 
   return (
-    <ThemeProvider theme={mdTheme}>
+    <ThemeProvider theme={theme}>
       <Box sx={{ display: "flex" }}>
         <CssBaseline />
         <AppBar position="absolute" open={open}>
@@ -132,6 +132,7 @@ const DashboardContentIndex = ({ children }: any) => {
                 <NotificationsIcon />
               </Badge>
             </IconButton>
+            <CustomizedSwitches />
           </Toolbar>
         </AppBar>
         <Drawer variant="permanent" open={open}>
@@ -151,7 +152,7 @@ const DashboardContentIndex = ({ children }: any) => {
           <List component="nav">
             {mainListItems}
             <Divider sx={{ my: 1 }} />
-            {secondaryListItems}
+            {/* {secondaryListItems} */}
           </List>
         </Drawer>
         <Box
