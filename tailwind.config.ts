@@ -2,6 +2,7 @@
 import defaultTheme from "tailwindcss/defaultTheme";
 
 module.exports = {
+  purge: ["./src/**/*.{tsx}"],
   theme: {
     extend: {
       fontFamily: {
@@ -9,5 +10,6 @@ module.exports = {
       },
     },
   },
+
   // ...
 };

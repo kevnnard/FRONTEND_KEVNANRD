@@ -2,6 +2,7 @@ import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { store, persister } from "@/store";
 import { AuthProvider as JWTProvider } from "@/contexts/authContext";
+import "tailwindcss/tailwind.css";
 import { ApolloProvider } from "@apollo/client/react";
 import ClientConfig from "@/contexts/client.config";
 import authGuard from "@/layout/authGuard";
