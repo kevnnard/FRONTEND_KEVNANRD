@@ -52,9 +52,11 @@ type GLTFResult = GLTF & {
     Group7: THREE.Mesh;
     Group8: THREE.Mesh;
     ZBrush_defualt_group: THREE.Mesh;
+    round_carpet: THREE.Mesh;
   };
   materials: {
     lambert112SG: THREE.MeshPhysicalMaterial;
+    ["round carpet"]: THREE.MeshStandardMaterial;
   };
 };
 
@@ -64,445 +66,365 @@ export function ModelChair(props: JSX.IntrinsicElements["group"]) {
     <group {...props} dispose={null}>
       <group
         name="1OBJ"
-        position={[0.27027541, 0.62835461, -1.52376175]}
-        rotation={[3.11965071, -0.70957532, 3.13347309]}
-        scale={[0.63306296, 0.63306296, 0.63306302]}
-        userData={{ name: "1.OBJ" }}
+        position={[-1.23171318, 0.79131877, -1.10929692]}
+        rotation={[3.13323023, -0.83107727, 3.12952707]}
+        scale={[0.78824115, 0.78824133, 0.78824133]}
       >
-        <group name="g__Group10" userData={{ name: "g _Group10" }}>
-          <mesh
-            name="_Group10"
-            castShadow
-            receiveShadow
-            geometry={nodes._Group10.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "_Group10" }}
-          />
-        </group>
-        <group name="g__Group2" userData={{ name: "g _Group2" }}>
-          <mesh
-            name="_Group2"
-            castShadow
-            receiveShadow
-            geometry={nodes._Group2.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "_Group2" }}
-          />
-        </group>
-        <group name="g__Group3" userData={{ name: "g _Group3" }}>
-          <mesh
-            name="_Group3"
-            castShadow
-            receiveShadow
-            geometry={nodes._Group3.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "_Group3" }}
-          />
-        </group>
-        <group name="g__Group4" userData={{ name: "g _Group4" }}>
-          <mesh
-            name="_Group4"
-            castShadow
-            receiveShadow
-            geometry={nodes._Group4.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "_Group4" }}
-          />
-        </group>
-        <group name="g__Group5" userData={{ name: "g _Group5" }}>
-          <mesh
-            name="_Group5"
-            castShadow
-            receiveShadow
-            geometry={nodes._Group5.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "_Group5" }}
-          />
-        </group>
-        <group name="g__Group6" userData={{ name: "g _Group6" }}>
-          <mesh
-            name="_Group6"
-            castShadow
-            receiveShadow
-            geometry={nodes._Group6.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "_Group6" }}
-          />
-        </group>
-        <group name="g__Group7" userData={{ name: "g _Group7" }}>
-          <mesh
-            name="_Group7"
-            castShadow
-            receiveShadow
-            geometry={nodes._Group7.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "_Group7" }}
-          />
-        </group>
-        <group name="g__Group8" userData={{ name: "g _Group8" }}>
-          <mesh
-            name="_Group8"
-            castShadow
-            receiveShadow
-            geometry={nodes._Group8.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "_Group8" }}
-          />
-        </group>
-        <group name="g__Group9" userData={{ name: "g _Group9" }}>
-          <mesh
-            name="_Group9"
-            castShadow
-            receiveShadow
-            geometry={nodes._Group9.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "_Group9" }}
-          />
-        </group>
-        <group name="g_Group10" userData={{ name: "g Group10" }}>
-          <mesh
-            name="Group10"
-            castShadow
-            receiveShadow
-            geometry={nodes.Group10.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "Group10" }}
-          />
-        </group>
-        <group name="g_Group11" userData={{ name: "g Group11" }}>
-          <mesh
-            name="Group11"
-            castShadow
-            receiveShadow
-            geometry={nodes.Group11.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "Group11" }}
-          />
-        </group>
-        <group name="g_Group12" userData={{ name: "g Group12" }}>
-          <mesh
-            name="Group12"
-            castShadow
-            receiveShadow
-            geometry={nodes.Group12.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "Group12" }}
-          />
-        </group>
-        <group name="g_Group13" userData={{ name: "g Group13" }}>
-          <mesh
-            name="Group13"
-            castShadow
-            receiveShadow
-            geometry={nodes.Group13.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "Group13" }}
-          />
-        </group>
-        <group name="g_Group14" userData={{ name: "g Group14" }}>
-          <mesh
-            name="Group14"
-            castShadow
-            receiveShadow
-            geometry={nodes.Group14.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "Group14" }}
-          />
-        </group>
-        <group name="g_Group15" userData={{ name: "g Group15" }}>
-          <mesh
-            name="Group15"
-            castShadow
-            receiveShadow
-            geometry={nodes.Group15.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "Group15" }}
-          />
-        </group>
-        <group name="g_Group16" userData={{ name: "g Group16" }}>
-          <mesh
-            name="Group16"
-            castShadow
-            receiveShadow
-            geometry={nodes.Group16.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "Group16" }}
-          />
-        </group>
-        <group name="g_Group17" userData={{ name: "g Group17" }}>
-          <mesh
-            name="Group17"
-            castShadow
-            receiveShadow
-            geometry={nodes.Group17.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "Group17" }}
-          />
-        </group>
-        <group name="g_Group18" userData={{ name: "g Group18" }}>
-          <mesh
-            name="Group18"
-            castShadow
-            receiveShadow
-            geometry={nodes.Group18.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "Group18" }}
-          />
-        </group>
-        <group name="g_Group19" userData={{ name: "g Group19" }}>
-          <mesh
-            name="Group19"
-            castShadow
-            receiveShadow
-            geometry={nodes.Group19.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "Group19" }}
-          />
-        </group>
-        <group name="g_Group2" userData={{ name: "g Group2" }}>
-          <mesh
-            name="Group2"
-            castShadow
-            receiveShadow
-            geometry={nodes.Group2.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "Group2" }}
-          />
-        </group>
-        <group name="g_Group20" userData={{ name: "g Group20" }}>
-          <mesh
-            name="Group20"
-            castShadow
-            receiveShadow
-            geometry={nodes.Group20.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "Group20" }}
-          />
-        </group>
-        <group name="g_Group21" userData={{ name: "g Group21" }}>
-          <mesh
-            name="Group21"
-            castShadow
-            receiveShadow
-            geometry={nodes.Group21.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "Group21" }}
-          />
-        </group>
-        <group name="g_Group22" userData={{ name: "g Group22" }}>
-          <mesh
-            name="Group22"
-            castShadow
-            receiveShadow
-            geometry={nodes.Group22.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "Group22" }}
-          />
-        </group>
-        <group name="g_Group23" userData={{ name: "g Group23" }}>
-          <mesh
-            name="Group23"
-            castShadow
-            receiveShadow
-            geometry={nodes.Group23.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "Group23" }}
-          />
-        </group>
-        <group name="g_Group24" userData={{ name: "g Group24" }}>
-          <mesh
-            name="Group24"
-            castShadow
-            receiveShadow
-            geometry={nodes.Group24.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "Group24" }}
-          />
-        </group>
-        <group name="g_Group25" userData={{ name: "g Group25" }}>
-          <mesh
-            name="Group25"
-            castShadow
-            receiveShadow
-            geometry={nodes.Group25.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "Group25" }}
-          />
-        </group>
-        <group name="g_Group26" userData={{ name: "g Group26" }}>
-          <mesh
-            name="Group26"
-            castShadow
-            receiveShadow
-            geometry={nodes.Group26.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "Group26" }}
-          />
-        </group>
-        <group name="g_Group28" userData={{ name: "g Group28" }}>
-          <mesh
-            name="Group28"
-            castShadow
-            receiveShadow
-            geometry={nodes.Group28.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "Group28" }}
-          />
-        </group>
-        <group name="g_Group29" userData={{ name: "g Group29" }}>
-          <mesh
-            name="Group29"
-            castShadow
-            receiveShadow
-            geometry={nodes.Group29.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "Group29" }}
-          />
-        </group>
-        <group name="g_Group3" userData={{ name: "g Group3" }}>
-          <mesh
-            name="Group3"
-            castShadow
-            receiveShadow
-            geometry={nodes.Group3.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "Group3" }}
-          />
-        </group>
-        <group name="g_Group30" userData={{ name: "g Group30" }}>
-          <mesh
-            name="Group30"
-            castShadow
-            receiveShadow
-            geometry={nodes.Group30.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "Group30" }}
-          />
-        </group>
-        <group name="g_Group31" userData={{ name: "g Group31" }}>
-          <mesh
-            name="Group31"
-            castShadow
-            receiveShadow
-            geometry={nodes.Group31.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "Group31" }}
-          />
-        </group>
-        <group name="g_Group32" userData={{ name: "g Group32" }}>
-          <mesh
-            name="Group32"
-            castShadow
-            receiveShadow
-            geometry={nodes.Group32.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "Group32" }}
-          />
-        </group>
-        <group name="g_Group33" userData={{ name: "g Group33" }}>
-          <mesh
-            name="Group33"
-            castShadow
-            receiveShadow
-            geometry={nodes.Group33.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "Group33" }}
-          />
-        </group>
-        <group name="g_Group34" userData={{ name: "g Group34" }}>
-          <mesh
-            name="Group34"
-            castShadow
-            receiveShadow
-            geometry={nodes.Group34.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "Group34" }}
-          />
-        </group>
-        <group name="g_Group35" userData={{ name: "g Group35" }}>
-          <mesh
-            name="Group35"
-            castShadow
-            receiveShadow
-            geometry={nodes.Group35.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "Group35" }}
-          />
-        </group>
-        <group name="g_Group4" userData={{ name: "g Group4" }}>
-          <mesh
-            name="Group4"
-            castShadow
-            receiveShadow
-            geometry={nodes.Group4.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "Group4" }}
-          />
-        </group>
-        <group name="g_Group5" userData={{ name: "g Group5" }}>
-          <mesh
-            name="Group5"
-            castShadow
-            receiveShadow
-            geometry={nodes.Group5.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "Group5" }}
-          />
-        </group>
-        <group name="g_Group6" userData={{ name: "g Group6" }}>
-          <mesh
-            name="Group6"
-            castShadow
-            receiveShadow
-            geometry={nodes.Group6.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "Group6" }}
-          />
-        </group>
-        <group name="g_Group61531" userData={{ name: "g Group61531" }}>
-          <mesh
-            name="Group61531"
-            castShadow
-            receiveShadow
-            geometry={nodes.Group61531.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "Group61531" }}
-          />
-        </group>
-        <group name="g_Group7" userData={{ name: "g Group7" }}>
-          <mesh
-            name="Group7"
-            castShadow
-            receiveShadow
-            geometry={nodes.Group7.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "Group7" }}
-          />
-        </group>
-        <group name="g_Group8" userData={{ name: "g Group8" }}>
-          <mesh
-            name="Group8"
-            castShadow
-            receiveShadow
-            geometry={nodes.Group8.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "Group8" }}
-          />
-        </group>
-        <group
-          name="g_ZBrush_defualt_group"
-          userData={{ name: "g ZBrush_defualt_group" }}
-        >
-          <mesh
-            name="ZBrush_defualt_group"
-            castShadow
-            receiveShadow
-            geometry={nodes.ZBrush_defualt_group.geometry}
-            material={materials.lambert112SG}
-            userData={{ name: "ZBrush_defualt_group" }}
-          />
-        </group>
+        <mesh
+          name="_Group10"
+          castShadow
+          receiveShadow
+          geometry={nodes._Group10.geometry}
+          material={materials.lambert112SG}
+          position={[-0.04058773, -0.10650302, -0.25761274]}
+        />
+        <mesh
+          name="_Group2"
+          castShadow
+          receiveShadow
+          geometry={nodes._Group2.geometry}
+          material={materials.lambert112SG}
+          position={[0.08188342, -0.35338685, 0.05212546]}
+        />
+        <mesh
+          name="_Group3"
+          castShadow
+          receiveShadow
+          geometry={nodes._Group3.geometry}
+          material={materials.lambert112SG}
+          position={[-0.12686537, -0.35377309, 0.05171479]}
+        />
+        <mesh
+          name="_Group4"
+          castShadow
+          receiveShadow
+          geometry={nodes._Group4.geometry}
+          material={materials.lambert112SG}
+          position={[0.09707464, -0.35734138, 0.03201853]}
+        />
+        <mesh
+          name="_Group5"
+          castShadow
+          receiveShadow
+          geometry={nodes._Group5.geometry}
+          material={materials.lambert112SG}
+          position={[0.32625085, -0.08842632, 0.17245099]}
+        />
+        <mesh
+          name="_Group6"
+          castShadow
+          receiveShadow
+          geometry={nodes._Group6.geometry}
+          material={materials.lambert112SG}
+          position={[-0.14943919, -0.35743898, 0.03201114]}
+        />
+        <mesh
+          name="_Group7"
+          castShadow
+          receiveShadow
+          geometry={nodes._Group7.geometry}
+          material={materials.lambert112SG}
+          position={[-0.03793922, -0.35737926, 0.03207768]}
+        />
+        <mesh
+          name="_Group8"
+          castShadow
+          receiveShadow
+          geometry={nodes._Group8.geometry}
+          material={materials.lambert112SG}
+          position={[-0.02320668, -0.35901576, 0.04088759]}
+        />
+        <mesh
+          name="_Group9"
+          castShadow
+          receiveShadow
+          geometry={nodes._Group9.geometry}
+          material={materials.lambert112SG}
+          position={[-0.00667372, -0.72407389, 0.07671553]}
+        />
+        <mesh
+          name="Group10"
+          castShadow
+          receiveShadow
+          geometry={nodes.Group10.geometry}
+          material={materials.lambert112SG}
+          position={[-0.26598328, 0.72693366, -0.37496489]}
+        />
+        <mesh
+          name="Group11"
+          castShadow
+          receiveShadow
+          geometry={nodes.Group11.geometry}
+          material={materials.lambert112SG}
+          position={[-0.29663208, 0.21358933, -0.25423086]}
+        />
+        <mesh
+          name="Group12"
+          castShadow
+          receiveShadow
+          geometry={nodes.Group12.geometry}
+          material={materials.lambert112SG}
+          position={[-0.28027573, 0.20686528, -0.19477184]}
+        />
+        <mesh
+          name="Group13"
+          castShadow
+          receiveShadow
+          geometry={nodes.Group13.geometry}
+          material={materials.lambert112SG}
+          position={[-0.32201216, 0.22841963, -0.18310621]}
+        />
+        <mesh
+          name="Group14"
+          castShadow
+          receiveShadow
+          geometry={nodes.Group14.geometry}
+          material={materials.lambert112SG}
+          position={[-0.23686677, 0.22222282, -0.22783387]}
+        />
+        <mesh
+          name="Group15"
+          castShadow
+          receiveShadow
+          geometry={nodes.Group15.geometry}
+          material={materials.lambert112SG}
+          position={[0.20261849, 0.66924185, -0.33776101]}
+        />
+        <mesh
+          name="Group16"
+          castShadow
+          receiveShadow
+          geometry={nodes.Group16.geometry}
+          material={materials.lambert112SG}
+          position={[-0.27259976, -0.20221794, 0.00028582]}
+        />
+        <mesh
+          name="Group17"
+          castShadow
+          receiveShadow
+          geometry={nodes.Group17.geometry}
+          material={materials.lambert112SG}
+          position={[-0.29392859, -0.20765261, -0.00557838]}
+        />
+        <mesh
+          name="Group18"
+          castShadow
+          receiveShadow
+          geometry={nodes.Group18.geometry}
+          material={materials.lambert112SG}
+          position={[-0.24908711, -0.22547999, 0.03239807]}
+        />
+        <mesh
+          name="Group19"
+          castShadow
+          receiveShadow
+          geometry={nodes.Group19.geometry}
+          material={materials.lambert112SG}
+          position={[-0.02964004, -0.21394095, 0.02921931]}
+        />
+        <mesh
+          name="Group2"
+          castShadow
+          receiveShadow
+          geometry={nodes.Group2.geometry}
+          material={materials.lambert112SG}
+          position={[0.23622613, -0.20765255, -0.00557831]}
+        />
+        <mesh
+          name="Group20"
+          castShadow
+          receiveShadow
+          geometry={nodes.Group20.geometry}
+          material={materials.lambert112SG}
+          position={[0.14040631, -0.28331411, 0.21971676]}
+        />
+        <mesh
+          name="Group21"
+          castShadow
+          receiveShadow
+          geometry={nodes.Group21.geometry}
+          material={materials.lambert112SG}
+          position={[0.19256869, -0.14039624, -0.08058751]}
+        />
+        <mesh
+          name="Group22"
+          castShadow
+          receiveShadow
+          geometry={nodes.Group22.geometry}
+          material={materials.lambert112SG}
+          position={[0.21469325, -0.20221664, -0.00032823]}
+        />
+        <mesh
+          name="Group23"
+          castShadow
+          receiveShadow
+          geometry={nodes.Group23.geometry}
+          material={materials.lambert112SG}
+          position={[0.21651463, 0.67281133, -0.38471529]}
+        />
+        <mesh
+          name="Group24"
+          castShadow
+          receiveShadow
+          geometry={nodes.Group24.geometry}
+          material={materials.lambert112SG}
+          position={[0.22738393, 0.71130168, -0.34594694]}
+        />
+        <mesh
+          name="Group25"
+          castShadow
+          receiveShadow
+          geometry={nodes.Group25.geometry}
+          material={materials.lambert112SG}
+          position={[0.05325838, 0.70517242, -0.40709099]}
+        />
+        <mesh
+          name="Group26"
+          castShadow
+          receiveShadow
+          geometry={nodes.Group26.geometry}
+          material={materials.lambert112SG}
+          position={[0.30135542, 0.53476256, -0.1994039]}
+        />
+        <mesh
+          name="Group28"
+          castShadow
+          receiveShadow
+          geometry={nodes.Group28.geometry}
+          material={materials.lambert112SG}
+          position={[0.19370003, 0.7269336, -0.37496489]}
+        />
+        <mesh
+          name="Group29"
+          castShadow
+          receiveShadow
+          geometry={nodes.Group29.geometry}
+          material={materials.lambert112SG}
+          position={[-0.03620751, 0.3658354, -0.31018364]}
+        />
+        <mesh
+          name="Group3"
+          castShadow
+          receiveShadow
+          geometry={nodes.Group3.geometry}
+          material={materials.lambert112SG}
+          position={[0.19076374, -0.22548416, 0.03171089]}
+        />
+        <mesh
+          name="Group30"
+          castShadow
+          receiveShadow
+          geometry={nodes.Group30.geometry}
+          material={materials.lambert112SG}
+          position={[0.22433609, 0.21346405, -0.2542221]}
+        />
+        <mesh
+          name="Group31"
+          castShadow
+          receiveShadow
+          geometry={nodes.Group31.geometry}
+          material={materials.lambert112SG}
+          position={[0.20799223, 0.20686522, -0.19477172]}
+        />
+        <mesh
+          name="Group32"
+          castShadow
+          receiveShadow
+          geometry={nodes.Group32.geometry}
+          material={materials.lambert112SG}
+          position={[0.24972883, 0.22844392, -0.18310621]}
+        />
+        <mesh
+          name="Group33"
+          castShadow
+          receiveShadow
+          geometry={nodes.Group33.geometry}
+          material={materials.lambert112SG}
+          position={[0.16458343, 0.22222285, -0.22783394]}
+        />
+        <mesh
+          name="Group34"
+          castShadow
+          receiveShadow
+          geometry={nodes.Group34.geometry}
+          material={materials.lambert112SG}
+          position={[-0.20132113, -0.28331417, 0.21971673]}
+        />
+        <mesh
+          name="Group35"
+          castShadow
+          receiveShadow
+          geometry={nodes.Group35.geometry}
+          material={materials.lambert112SG}
+          position={[-0.24919167, -0.14039628, -0.08058751]}
+        />
+        <mesh
+          name="Group4"
+          castShadow
+          receiveShadow
+          geometry={nodes.Group4.geometry}
+          material={materials.lambert112SG}
+          position={[-0.27490208, 0.66924167, -0.33776096]}
+        />
+        <mesh
+          name="Group5"
+          castShadow
+          receiveShadow
+          geometry={nodes.Group5.geometry}
+          material={materials.lambert112SG}
+          position={[-0.28879818, 0.67281127, -0.38471511]}
+        />
+        <mesh
+          name="Group6"
+          castShadow
+          receiveShadow
+          geometry={nodes.Group6.geometry}
+          material={materials.lambert112SG}
+          position={[-0.29966745, 0.71130133, -0.34594697]}
+        />
+        <mesh
+          name="Group61531"
+          castShadow
+          receiveShadow
+          geometry={nodes.Group61531.geometry}
+          material={materials.lambert112SG}
+          position={[-0.03614175, 0.88995922, -0.36857346]}
+        />
+        <mesh
+          name="Group7"
+          castShadow
+          receiveShadow
+          geometry={nodes.Group7.geometry}
+          material={materials.lambert112SG}
+          position={[-0.12554185, 0.70517254, -0.40709102]}
+        />
+        <mesh
+          name="Group8"
+          castShadow
+          receiveShadow
+          geometry={nodes.Group8.geometry}
+          material={materials.lambert112SG}
+          position={[-0.37363881, 0.53476262, -0.1994039]}
+        />
+        <mesh
+          name="ZBrush_defualt_group"
+          castShadow
+          receiveShadow
+          geometry={nodes.ZBrush_defualt_group.geometry}
+          material={materials.lambert112SG}
+          position={[-0.38837922, -0.08910608, 0.17338432]}
+        />
       </group>
+      <mesh
+        name="round_carpet"
+        castShadow
+        receiveShadow
+        geometry={nodes.round_carpet.geometry}
+        material={materials["round carpet"]}
+        position={[-1.68471193, 0.01926349, 1.30751956]}
+        rotation={[Math.PI / 2, 0, 0]}
+        scale={0.01032616}
+      />
     </group>
   );
 }

@@ -1,5 +1,17 @@
 .splide__list {
-    text-align: center;
-    align-items: center;
-    margin: auto !important;
+  text-align: center;
+  align-items: center;
+  margin: auto !important;
+}
+
+.kevnnard {
+  font-size: xx-small;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  justify-content: center;
+  color: #ffc;
+  padding: 0.5rem;
+  user-select: none;
 }
