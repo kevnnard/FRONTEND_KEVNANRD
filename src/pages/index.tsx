@@ -4,6 +4,7 @@ import {
   ContactShadows,
   Sky,
   Cloud,
+  PositionalAudio,
 } from "@react-three/drei";
 import { Suspense, useState } from "react";
 
@@ -99,8 +100,9 @@ const App3d = () => {
             {/* <PivotControls /> */}
             {/* <TransformControls mode="translate" /> */}
             {/* <OrbitControls target={[0, 0, 0]} /> */}
-            <Cloud speed={0.2} position={[-15, 0, 0]} segments={10} />
+            {/* <Cloud speed={0.2} position={[-15, 0, 0]} segments={10} /> */}
           </Suspense>
+          <PositionalAudio autoplay url="/music/intro.mp3" distance={2} loop />
         </>
       </Canvas>
       <div className="kevnnard">

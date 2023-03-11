@@ -36,13 +36,14 @@ function Camera({ cameraInit, cameraPhone, cameraControlsRef2 }): any {
       {/* <OrthographicCamera makeDefault position={[0, 0, 0]} /> */}
       <CameraControls
         ref={first}
-        // minAzimuthAngle={-Math.PI / 4}
-        // maxAzimuthAngle={-Math.PI / 4}
-        // minPolarAngle={-Math.PI / 4}
-        // maxPolarAngle={Math.PI / 4}
+        minAzimuthAngle={-Math.PI / 4}
+        maxAzimuthAngle={-Math.PI / 4}
+        minPolarAngle={-Math.PI / 4}
+        maxPolarAngle={Math.PI / 4}
         minDistance={5}
         maxDistance={28}
         mouseButtons={{ left: 0, right: 0, wheel: 0, middle: 0 }}
+        touches={{ one: 0, two: 0, three: 0 }}
       >
         <PerspectiveCamera
           makeDefault
