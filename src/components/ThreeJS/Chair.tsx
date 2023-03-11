@@ -7,7 +7,7 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function ModelChair(props: any) {
-  const { nodes, materials }: any = useGLTF("./models/silla.glb", true);
+  const { nodes, materials }: any = useGLTF("./models/silla.gltf", true);
   return (
     <group {...props} dispose={null}>
       <mesh
