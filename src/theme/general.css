@@ -15,3 +15,16 @@
   padding: 0.5rem;
   user-select: none;
 }
+
+.icon__point_red {
+  animation: iconAnimation 1s alternate infinite ease-in-out;
+}
+
+@keyframes iconAnimation {
+  0% {
+    transform: scale(0.85);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}

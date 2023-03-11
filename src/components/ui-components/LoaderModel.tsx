@@ -25,7 +25,7 @@ function LoaderModel() {
           transition: "width 0.5s",
         }}
       >
-        {progress}% loaded
+        {(loaded / total) * 100}% loaded
       </div>
     </Html>
   );

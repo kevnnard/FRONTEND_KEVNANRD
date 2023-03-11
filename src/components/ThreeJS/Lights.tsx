@@ -29,20 +29,20 @@ function Lights({ luzPri, luzSec, luzTer }: any) {
       /> */}
       <spotLight
         isSpotLight={luzPri}
-        position={[-1, 4, -2.3]}
+        position={[3, 3.5, 1]}
         angle={Math.PI / 3.8}
         color={"0xfff"}
         intensity={0}
-        distance={6.1}
-        penumbra={0.4}
+        distance={5}
+        penumbra={0.5}
         decay={1}
-        power={20}
+        power={40}
         castShadow
         receiveShadow
         shadow-bias={-0.02}
       />
       <pointLight
-        isPointLight={luzSec}
+        isLight={luzSec}
         position={[1, 2, 1.1]}
         color={"#CFD8D7"}
         intensity={0}
@@ -54,7 +54,7 @@ function Lights({ luzPri, luzSec, luzTer }: any) {
         shadow-bias={-0.019}
       />
       <pointLight
-        isPointLight={luzTer}
+        isLight={luzTer}
         position={[-1.1, 2.6, -2]}
         color={"#BC7C9C"}
         intensity={0}
