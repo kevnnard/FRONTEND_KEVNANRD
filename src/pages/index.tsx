@@ -52,7 +52,7 @@ const App3d = () => {
         dpr={[1, 2]}
       >
         <>
-          <Suspense fallback={<LoaderModel />}>
+          <Suspense fallback={null}>
             <fog attach="fog" args={["#a69", 10, 52]} />
             {/* <Sky sunPosition={[1, -2, 300]} /> */}
             <Lights luzPri={luzPri} luzSec={luzSec} luzTer={luzTer} />
@@ -96,12 +96,12 @@ const App3d = () => {
                 blur={10}
               />
             </PresentationControls>
+            {/* <PivotControls /> */}
+            {/* <TransformControls mode="translate" /> */}
+            {/* <OrbitControls target={[0, 0, 0]} /> */}
+            <Cloud speed={0.2} position={[-15, 0, 0]} segments={10} />
           </Suspense>
-          {/* <PivotControls /> */}
-          {/* <TransformControls mode="translate" /> */}
-          {/* <OrbitControls target={[0, 0, 0]} /> */}
         </>
-        <Cloud speed={0.2} position={[-15, 0, 0]} segments={10} />
       </Canvas>
       <div className="kevnnard">
         Copyright © Kevnnard 2023 Todos los derechos reservados{" "}
