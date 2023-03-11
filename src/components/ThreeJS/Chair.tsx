@@ -6,13 +6,11 @@ import * as THREE from "three";
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
-export function ModelChair(props: any) {
-  const { nodes, materials }: any = useGLTF(
-    "./models/sillaDraco.gltf",
-    "/draco-gltf/"
-  );
+export default function ModelChair(props: any) {
+  const group = useRef();
+  const { nodes, materials }: any = useGLTF("./sillaDraco.gltf");
   return (
-    <group {...props} dispose={null}>
+    <group ref={group} {...props} dispose={null}>
       <mesh
         name="_Group10"
         castShadow
@@ -325,4 +323,4 @@ export function ModelChair(props: any) {
   );
 }
 
-useGLTF.preload("./models/sillaDraco.gltf");
+useGLTF.preload("./sillaDraco.gltf");

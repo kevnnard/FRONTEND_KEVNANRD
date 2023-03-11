@@ -11,7 +11,7 @@ import Camera from "@/components/ThreeJS/Camera";
 import Lights from "@/components/ThreeJS/Lights";
 import { Model } from "@/components/ThreeJS/Office";
 import LoaderModel from "@/components/ui-components/LoaderModel";
-import { ModelChair } from "@/components/ThreeJS/Chair";
+import ModelChair from "@/components/ThreeJS/Chair";
 
 const App3d = () => {
   //Move Camera
