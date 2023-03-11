@@ -16,12 +16,12 @@ export const ConfigContext = ({ children }: any) => {
   );
   return (
     <>
-<!--       <ColorModeContext.Provider value={colorMode}>
+      {/* <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         {children}
       </ThemeProvider>
-    </ColorModeContext.Provider> -->
+    </ColorModeContext.Provider> */}
      </>
   );
 };
