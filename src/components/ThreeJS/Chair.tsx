@@ -7,7 +7,7 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function ModelChair(props: any) {
-  const { nodes, materials }: any = useGLTF("/models/silla.glb", true);
+  const { nodes, materials }: any = useGLTF("./models/silla.glb", true);
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -322,4 +322,4 @@ export function ModelChair(props: any) {
   );
 }
 
-useGLTF.preload("/models/silla.glb");
+useGLTF.preload("./models/silla.glb");

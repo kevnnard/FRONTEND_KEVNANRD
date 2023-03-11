@@ -15,7 +15,7 @@ export function Model(props: any) {
     positionPhone,
     positionInitCamera,
   } = props;
-  const { nodes, materials }: any = useGLTF("/models/Ofiice.glb", true);
+  const { nodes, materials }: any = useGLTF("./models/Ofiice.glb", true);
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -991,4 +991,4 @@ export function Model(props: any) {
   );
 }
 
-useGLTF.preload("/models/Ofiice.glb");
+useGLTF.preload("./models/Ofiice.glb");
