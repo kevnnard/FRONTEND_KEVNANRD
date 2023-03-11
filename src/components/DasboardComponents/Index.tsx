@@ -98,7 +98,7 @@ const DashboardContentIndex = ({ children }: any) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={{ display: "flex" }}>
+      {/* <Box sx={{ display: "flex" }}> */}
         <CssBaseline />
         <AppBar position="absolute" open={open}>
           <Toolbar
@@ -172,7 +172,7 @@ const DashboardContentIndex = ({ children }: any) => {
             {children}
             <Copyright sx={{ pt: 4 }} />
           </Container>
-        </Box>
+       {/* </Box> */}
       </Box>
     </ThemeProvider>
   );
