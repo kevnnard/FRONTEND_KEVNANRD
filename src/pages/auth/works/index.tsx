@@ -33,7 +33,7 @@ interface Props {
 
 const Works = () => {
   const theme = useTheme();
-  const [worksState, setWorks] = useState<Props[]>();
+  const [worksState, setWorks]: any = useState();
   const { works } = useSelector((state: any) => state.works);
 
   const [getWorksData, { loading, data, startPolling, stopPolling }] =
@@ -70,7 +70,7 @@ const Works = () => {
           {/* End hero unit */}
           <Grid container spacing={4}>
             {worksState
-              ? worksState.getAllWorks!.map((card: Props, index: number) => (
+              ? worksState.getAllWorks.map((card: Props, index: number) => (
                   <Grid item key={index} xs={12} sm={6} md={4}>
                     <Card
                       sx={{

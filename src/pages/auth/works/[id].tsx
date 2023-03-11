@@ -52,13 +52,13 @@ const WorkId = () => {
         <BasicModal worksState={worksState} />
         <DeleteWorkId worksState={worksState} />
       </Stack>
-      <Box sx={{ paddingBottom: "5rem" }}>
+      <div style={{ paddingBottom: "5rem" }}>
         <Grid container spacing={2} columns={16}>
           <Grid item xs={16}>
             <FeaturedWork worksState={worksState} />
           </Grid>
         </Grid>
-      </Box>
+      </div>
       <SplideComponent getWorksData={getWorksData} worksState={worksState} />
     </>
   );

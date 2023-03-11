@@ -43,7 +43,7 @@ const animation = {
 
 const Snackbar = () => {
   const dispatch = useDispatch();
-  const snackbar = useSelector((state) => state.snackbar);
+  const snackbar = useSelector((state: any) => state.snackbar);
   const {
     actionButton,
     anchorOrigin,
@@ -75,14 +75,13 @@ const Snackbar = () => {
           TransitionComponent={animation[transition]}
           action={
             <>
-              <Button color="secondary" size="small" onClick={handleClose}>
+              <Button color="secondary" size="small">
                 UNDO
               </Button>
               <IconButton
                 size="small"
                 aria-label="close"
                 color="inherit"
-                onClick={handleClose}
                 sx={{ mt: 0.25 }}
               >
                 <CloseIcon fontSize="small" />
@@ -107,11 +106,7 @@ const Snackbar = () => {
             action={
               <>
                 {actionButton !== false && (
-                  <Button
-                    size="small"
-                    onClick={handleClose}
-                    sx={{ color: "background.paper" }}
-                  >
+                  <Button size="small" sx={{ color: "background.paper" }}>
                     UNDO
                   </Button>
                 )}
@@ -120,7 +115,6 @@ const Snackbar = () => {
                     sx={{ color: "background.paper" }}
                     size="small"
                     aria-label="close"
-                    onClick={handleClose}
                   >
                     <CloseIcon fontSize="small" />
                   </IconButton>

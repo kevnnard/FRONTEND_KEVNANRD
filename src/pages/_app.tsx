@@ -9,7 +9,7 @@ import authGuard from "@/layout/authGuard";
 import noGuard from "@/layout/noGuard";
 import Head from "next/head";
 import "../theme/general.css";
-import Snackbar from "@/components/ui-components/snackbar";
+import Snackbar from "@/components/ui-components/Snackbar";
 import { NavigationScroll } from "@/layout/NavigationScroll";
 import { ConfigContext } from "@/contexts/configContext";
 

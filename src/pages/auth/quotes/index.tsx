@@ -33,7 +33,7 @@ interface Props {
 }
 
 const Quotes = () => {
-  const [quoteState, setQuotes] = useState<Props[]>();
+  const [quoteState, setQuotes]: any = useState();
   const { quotes } = useSelector((state: any) => state.quotes);
 
   const [getAllQuotesAction, { loading, data, startPolling, stopPolling }] =
