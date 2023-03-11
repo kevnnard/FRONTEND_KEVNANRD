@@ -31,8 +31,8 @@ export default function WorkIdComp({ worksState }: any) {
           alt={""} //   alt={post.imageText}
         />
       }
-      <Box
-        sx={{
+      <div
+        style={{
           position: "absolute",
           top: 0,
           bottom: 0,
@@ -43,11 +43,10 @@ export default function WorkIdComp({ worksState }: any) {
       />
       <Grid container>
         <Grid item md={6}>
-          <Box
-            sx={{
+          <div
+            style={{
               position: "relative",
-              p: { xs: 3, md: 6 },
-              pr: { md: 0 },
+              padding: 3,
             }}
           >
             <Typography
@@ -62,7 +61,7 @@ export default function WorkIdComp({ worksState }: any) {
               Estado: {getOneWork.status}
             </Typography>
             <Typography variant="subtitle1">Rol: {getOneWork.role}</Typography>
-          </Box>
+          </div>
         </Grid>
       </Grid>
     </Paper>

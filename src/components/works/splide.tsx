@@ -6,8 +6,8 @@ import Image from "next/image";
 const SplideComponent = ({ worksState }: any) => {
   const { getOneWork } = worksState;
   return (
-    <Box
-      sx={{
+    <div
+      style={{
         maxWidth: "100%",
       }}
     >
@@ -36,7 +36,7 @@ const SplideComponent = ({ worksState }: any) => {
             ))
           : null}
       </Splide>
-    </Box>
+    </div>
   );
 };
 
