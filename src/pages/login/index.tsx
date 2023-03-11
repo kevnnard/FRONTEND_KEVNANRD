@@ -81,10 +81,11 @@ const Login = () => {
           }}
         />
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-          <Box
-            sx={{
-              my: 8,
-              mx: 4,
+          <div
+            style={{
+              marginTop: 8,
+              marginLeft: 4,
+              marginRight: 4,
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
@@ -153,7 +154,7 @@ const Login = () => {
               </Grid>
               <Copyright sx={{ mt: 5 }} />
             </Box>
-          </Box>
+          </div>
         </Grid>
       </Grid>
     </ThemeProvider>
