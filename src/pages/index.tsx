@@ -10,20 +10,23 @@ import { Suspense, useState, useEffect } from "react";
 
 import Camera from "@/components/ThreeJS/Camera";
 import Lights from "@/components/ThreeJS/Lights";
-import { Model } from "@/components/ThreeJS/Office";
 import LoaderModel from "@/components/ui-components/LoaderModel";
 import { ModelParedes } from "@/components/ThreeJS/ModelParedes";
 import { ModelEscritorio } from "@/components/ThreeJS/Escritorio";
+import { ModelChair } from "@/components/ThreeJS/Chair";
+import ModelSala from "@/components/ThreeJS/Sala";
 
 const App3d = () => {
   //Move Camera
   const [cameraInit, setCameraInit] = useState(false);
   const [cameraPhone, setCameraPhone] = useState(false);
-  const [cameraControlsRef2, setcameraControlsRef2] = useState(false);
+  const [cameraMonitor, setCameraMonitor] = useState(false);
   //Lights On - Off
   const [luzPri, setLuzpri] = useState(false);
   const [luzSec, setLuzSec] = useState(false);
   const [luzTer, setLuzTer] = useState(false);
+  // M U S I C
+
   // F U N C T I O N S
   const OnclickLight = (): void =>
     luzPri ? setLuzpri(false) : setLuzpri(true);
@@ -33,15 +36,20 @@ const App3d = () => {
     luzTer ? setLuzTer(false) : setLuzTer(true);
 
   const cameraPositionInit = (): void => {
-    setCameraInit(true);
     setCameraPhone(false);
+    setCameraMonitor(false);
+    setCameraInit(true);
     setLuzpri(true);
   };
   const positionPhone = (): void => {
+    setCameraMonitor(false);
+    setCameraInit(false);
     setCameraPhone(true);
   };
-  const positionInitCamera = (): void => {
-    setcameraControlsRef2(cameraControlsRef2 ? false : true);
+  const positionMonitor = (): void => {
+    setCameraInit(false);
+    setCameraPhone(false);
+    setCameraMonitor(true);
   };
 
   const initScene = (): void => {
@@ -51,6 +59,10 @@ const App3d = () => {
       setLuzTer(true);
     }, 10000);
   };
+
+  useEffect(() => {
+    initScene();
+  }, []);
 
   return (
     <div style={{ height: "100vh", maxWidth: "100%", background: "#22151f" }}>
@@ -68,16 +80,16 @@ const App3d = () => {
             {/* <Sky sunPosition={[1, -2, 300]} /> */}
             <Lights luzPri={luzPri} luzSec={luzSec} luzTer={luzTer} />
             {/* <Cloud
-          speed={1}
-          position={[0, -3, -3]}
-          color={"#a69"}
-          segments={10}
-          opacity={0.9}
-        /> */}
+              speed={1}
+              position={[0, -3, -3]}
+              color={"#a69"}
+              segments={10}
+              opacity={0.9}
+            /> */}
             <Camera
               cameraInit={cameraInit}
               cameraPhone={cameraPhone}
-              cameraControlsRef2={cameraControlsRef2}
+              cameraMonitor={cameraMonitor}
             />
             <PresentationControls
               global
@@ -87,17 +99,15 @@ const App3d = () => {
               polar={[-Math.PI / 4, Math.PI / 4]}
               azimuth={[-Math.PI / 4, Math.PI / 4]}
             >
-              {/* <Model
-                position={[0, -1.7, 0.22]}
-                cameraPositionInit={cameraPositionInit}
-                OnclickLight={OnclickLight}
-                OnclickLight2={OnclickLight2}
-                OnclickLight3={OnclickLight3}
-                positionPhone={positionPhone}
-                positionInitCamera={positionInitCamera}
-              /> */}
               <ModelParedes position={[0, -1.7, 0.22]} />
-              <ModelEscritorio position={[0, -1.7, 0.22]} />
+              <ModelEscritorio
+                cameraPositionInit={cameraPositionInit}
+                positionPhone={positionPhone}
+                positionMonitor={positionMonitor}
+                position={[0, -1.7, 0.22]}
+              />
+              <ModelChair position={[0, -1.7, 0.22]} />
+              <ModelSala position={[0, -1.7, 0.22]} />
               <ContactShadows
                 frames={10}
                 rotation-x={[Math.PI / 2]}
@@ -112,12 +122,6 @@ const App3d = () => {
             {/* <TransformControls mode="translate" /> */}
             {/* <OrbitControls target={[0, 0, 0]} /> */}
             {/* <Cloud speed={0.2} position={[-15, 0, 0]} segments={10} /> */}
-            <PositionalAudio
-              autoplay
-              url="/music/intro.mp3"
-              distance={3}
-              loop
-            />
           </Suspense>
         </>
       </Canvas>
