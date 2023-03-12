@@ -3,8 +3,7 @@ import React, { useState, useRef } from "react";
 
 function Camera({ cameraInit, cameraPhone, cameraControlsRef2 }): any {
   const first: any = useRef();
-
-  // console.log(first);
+  const width = window.innerWidth;
   if (cameraInit) {
     first.current.setFocalOffset(0, 0, 0, true);
     first.current.setPosition(-17.2, 10, 14.18, true);
@@ -41,7 +40,7 @@ function Camera({ cameraInit, cameraPhone, cameraControlsRef2 }): any {
         minPolarAngle={-Math.PI / 4}
         maxPolarAngle={Math.PI / 4}
         minDistance={5}
-        maxDistance={28}
+        maxDistance={30}
         mouseButtons={{ left: 0, right: 0, wheel: 0, middle: 0 }}
         touches={{ one: 0, two: 0, three: 0 }}
       >
@@ -49,13 +48,11 @@ function Camera({ cameraInit, cameraPhone, cameraControlsRef2 }): any {
           makeDefault
           position={[-17.2, 9.51, 14.18]}
           rotation={[-0.5, -0.81, -0.351]}
-          fov={21}
-          far={31}
-          near={1}
+          fov={width > 390 ? 22 : 50}
+          far={35}
+          near={2}
         />
       </CameraControls>
-
-      {/* <CameraControls /> */}
     </>
   );
 }

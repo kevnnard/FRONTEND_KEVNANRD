@@ -6,13 +6,14 @@ import {
   Cloud,
   PositionalAudio,
 } from "@react-three/drei";
-import { Suspense, useState } from "react";
+import { Suspense, useState, useEffect } from "react";
 
 import Camera from "@/components/ThreeJS/Camera";
 import Lights from "@/components/ThreeJS/Lights";
 import { Model } from "@/components/ThreeJS/Office";
 import LoaderModel from "@/components/ui-components/LoaderModel";
-import { ModelChair } from "@/components/ThreeJS/Chair";
+import { ModelParedes } from "@/components/ThreeJS/ModelParedes";
+import { ModelEscritorio } from "@/components/ThreeJS/Escritorio";
 
 const App3d = () => {
   //Move Camera
@@ -20,9 +21,9 @@ const App3d = () => {
   const [cameraPhone, setCameraPhone] = useState(false);
   const [cameraControlsRef2, setcameraControlsRef2] = useState(false);
   //Lights On - Off
-  const [luzPri, setLuzpri] = useState(true);
-  const [luzSec, setLuzSec] = useState(true);
-  const [luzTer, setLuzTer] = useState(true);
+  const [luzPri, setLuzpri] = useState(false);
+  const [luzSec, setLuzSec] = useState(false);
+  const [luzTer, setLuzTer] = useState(false);
   // F U N C T I O N S
   const OnclickLight = (): void =>
     luzPri ? setLuzpri(false) : setLuzpri(true);
@@ -42,6 +43,15 @@ const App3d = () => {
   const positionInitCamera = (): void => {
     setcameraControlsRef2(cameraControlsRef2 ? false : true);
   };
+
+  const initScene = (): void => {
+    setTimeout(() => {
+      setLuzpri(true);
+      setLuzSec(true);
+      setLuzTer(true);
+    }, 10000);
+  };
+
   return (
     <div style={{ height: "100vh", maxWidth: "100%", background: "#22151f" }}>
       <Canvas
@@ -53,8 +63,8 @@ const App3d = () => {
         dpr={[1, 2]}
       >
         <>
-          <Suspense fallback={null}>
-            <fog attach="fog" args={["#a69", 10, 52]} />
+          <Suspense fallback={<LoaderModel />}>
+            <fog attach="fog" args={["#a69", 8, 52]} />
             {/* <Sky sunPosition={[1, -2, 300]} /> */}
             <Lights luzPri={luzPri} luzSec={luzSec} luzTer={luzTer} />
             {/* <Cloud
@@ -86,7 +96,8 @@ const App3d = () => {
                 positionPhone={positionPhone}
                 positionInitCamera={positionInitCamera}
               /> */}
-              <ModelChair position={[0, -1.7, 0.22]} />
+              <ModelParedes position={[0, -1.7, 0.22]} />
+              <ModelEscritorio position={[0, -1.7, 0.22]} />
               <ContactShadows
                 frames={10}
                 rotation-x={[Math.PI / 2]}
@@ -101,8 +112,13 @@ const App3d = () => {
             {/* <TransformControls mode="translate" /> */}
             {/* <OrbitControls target={[0, 0, 0]} /> */}
             {/* <Cloud speed={0.2} position={[-15, 0, 0]} segments={10} /> */}
+            <PositionalAudio
+              autoplay
+              url="/music/intro.mp3"
+              distance={3}
+              loop
+            />
           </Suspense>
-          <PositionalAudio autoplay url="/music/intro.mp3" distance={2} loop />
         </>
       </Canvas>
       <div className="kevnnard">
