@@ -1,7 +1,7 @@
 import { CameraControls, PerspectiveCamera } from "@react-three/drei";
 import React, { useState, useRef } from "react";
 
-function Camera({ cameraInit, cameraPhone, cameraMonitor }): any {
+function Camera({ cameraInit, cameraPhone, cameraMonitor, cameraTv }): any {
   const first: any = useRef();
   const width = window.innerWidth;
   if (cameraInit) {
@@ -15,6 +15,10 @@ function Camera({ cameraInit, cameraPhone, cameraMonitor }): any {
   if (cameraMonitor) {
     first.current.setFocalOffset(0.77, -0.5, -8, true);
     first.current.setPosition(-8, 2, 0, true);
+  }
+  if (cameraTv) {
+    first.current.setFocalOffset(-1.37, -0.6, -10, true);
+    first.current.setPosition(0, 6, 10, true);
   }
   return (
     <CameraControls

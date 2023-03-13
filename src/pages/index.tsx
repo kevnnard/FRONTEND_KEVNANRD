@@ -21,6 +21,7 @@ const App3d = () => {
   const [cameraInit, setCameraInit] = useState(false);
   const [cameraPhone, setCameraPhone] = useState(false);
   const [cameraMonitor, setCameraMonitor] = useState(false);
+  const [cameraTv, setCameraTv] = useState(false);
   //Lights On - Off
   const [luzPri, setLuzpri] = useState(false);
   const [luzSec, setLuzSec] = useState(false);
@@ -38,18 +39,27 @@ const App3d = () => {
   const cameraPositionInit = (): void => {
     setCameraPhone(false);
     setCameraMonitor(false);
+    setCameraTv(false);
     setCameraInit(true);
-    setLuzpri(true);
   };
   const positionPhone = (): void => {
     setCameraMonitor(false);
     setCameraInit(false);
+    setCameraTv(false);
     setCameraPhone(true);
   };
   const positionMonitor = (): void => {
     setCameraInit(false);
     setCameraPhone(false);
+    setCameraTv(false);
     setCameraMonitor(true);
+  };
+
+  const positionTv = (): void => {
+    setCameraInit(false);
+    setCameraPhone(false);
+    setCameraMonitor(false);
+    setCameraTv(true);
   };
 
   const initScene = (): void => {
@@ -90,6 +100,7 @@ const App3d = () => {
               cameraInit={cameraInit}
               cameraPhone={cameraPhone}
               cameraMonitor={cameraMonitor}
+              cameraTv={cameraTv}
             />
             <PresentationControls
               global
@@ -107,7 +118,13 @@ const App3d = () => {
                 position={[0, -1.7, 0.22]}
               />
               <ModelChair position={[0, -1.7, 0.22]} />
-              <ModelSala position={[0, -1.7, 0.22]} />
+              <ModelSala
+                OnclickLight2={OnclickLight2}
+                OnclickLight3={OnclickLight3}
+                cameraPositionInit={cameraPositionInit}
+                positionTv={positionTv}
+                position={[0, -1.7, 0.22]}
+              />
               <ContactShadows
                 frames={10}
                 rotation-x={[Math.PI / 2]}
