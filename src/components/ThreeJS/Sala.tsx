@@ -8,8 +8,13 @@ import TvHtml from "./Html/Tv/Index";
 import Image from "next/image";
 
 export default function ModelSala(props: any) {
-  const { positionTv, cameraPositionInit, OnclickLight2, OnclickLight3 } =
-    props;
+  const {
+    cameraTv,
+    positionTv,
+    cameraPositionInit,
+    OnclickLight2,
+    OnclickLight3,
+  } = props;
   const { nodes, materials }: any = useGLTF("/models3D/sala.gltf");
   return (
     <group {...props} dispose={null}>
@@ -38,21 +43,8 @@ export default function ModelSala(props: any) {
           geometry={nodes.sala_hex_3.geometry}
           material={materials.wire_204204204}
         >
-          <Html
-            scale={0.009}
-            rotation={[0, -0.81, 0]}
-            position={[-0.9, 0.8, -1.45]}
-            transform
-            occlude
-          >
-            <Image
-              className="icon__point_red"
-              src="/images/points/info.png"
-              width={750}
-              height={1000}
-              alt={""}
-              onPointerEnter={positionTv}
-            />
+          <Html scale={0.05} position={[-0.92, 0.85, -1.45]} transform occlude>
+            <div className="dot" onPointerEnter={positionTv}></div>
           </Html>
         </mesh>
         <mesh
@@ -71,9 +63,12 @@ export default function ModelSala(props: any) {
               color: "#000",
             }}
             transform
-            // occlude
+            occlude
           >
-            <TvHtml cameraPositionInit={cameraPositionInit} />
+            <TvHtml
+              cameraTv={cameraTv}
+              cameraPositionInit={cameraPositionInit}
+            />
           </Html>
         </mesh>
         <mesh

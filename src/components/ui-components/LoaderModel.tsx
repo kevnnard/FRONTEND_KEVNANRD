@@ -1,31 +1,32 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Html, useProgress } from "@react-three/drei";
-import React, { useState, useEffect } from "react";
+import Logo from "./Logo";
 
 function LoaderModel() {
-  const [filled, setFilled] = useState(0);
-  const [isRunning, setIsRunning] = useState(false);
   const { total, progress, loaded, active } = useProgress();
-
-  useEffect(() => {
-    if (filled < 100 && isRunning) {
-      setTimeout(() => setFilled((prev) => (prev += 2)), 200);
-    }
-  }, [filled, isRunning]);
-
-  useEffect(() => {
-    setIsRunning(true);
-  }, []);
   return (
-    <Html center>
+    <Html style={{ position: "relative" }} center>
       <div
         style={{
           height: "100%",
-          width: `${filled}%`,
-          backgroundColor: "#a66cff",
-          transition: "width 0.5s",
+          width: `${Math.trunc(progress)}%`,
+          backgroundColor: "#22151d",
+          transition: "width .2s",
+          overflow: "hidden",
         }}
       >
-        {(loaded / total) * 100}% loaded
+        <Logo />
+      </div>
+
+      <br />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          fontFamily: "Cascadia Code",
+        }}
+      >
+        {Math.trunc(progress)}% loaded
       </div>
     </Html>
   );

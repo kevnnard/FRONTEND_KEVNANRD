@@ -1,8 +1,16 @@
-const MovilHtml = ({ cameraPositionInit }) => {
+const MovilHtml = ({ cameraPhone, cameraPositionInit }) => {
   return (
     <div
       onPointerLeave={cameraPositionInit}
-      style={{ background: "#fff", height: "100%" }}
+      style={
+        cameraPhone
+          ? {
+              background: "#ccc",
+              height: "100%",
+              transition: "all ease-in-out 1s",
+            }
+          : {}
+      }
     >
       div
     </div>
